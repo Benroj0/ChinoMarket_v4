@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>upeu.edu.pe</groupId>
-	<artifactId>ecomerce_v1</artifactId>
+	<artifactId>ChinoMarket_v4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ecomerce_v1</name>
+	<name>ChinoMarket_v4</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

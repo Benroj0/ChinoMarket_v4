@@ -4,12 +4,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    <head  th:insert ="~{admin/template_admin::head} ">
+    <div th:insert ="~{admin/template_admin::head} "></div>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn_primary" th:href="@{/admin/products/create}">Crear</a>
+        </div>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Acciones</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr th:each="product:${products}">
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.CategoryEntity.name}"></td>
+                    <td>
+                        <a class="btn btn-warning" href="#">editar</a>
+                        <a class="btn btn-danger" href="#">eliminar</a>
+                        <a class="btn btn-info" href="#">inventario</a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+<div class="bg-body-tertiary text-center mt-auto" th:insert = "~{admin/template_admin::footer}"> </div>
+
 </html>
